@@ -3,8 +3,8 @@ import axios from 'axios';
 import { StatusBar } from 'expo-status-bar';
 import React, { useEffect, useState } from 'react';
 import { ScrollView, Text, TouchableOpacity, View } from 'react-native';
-import { ChevronLeftIcon, ClockIcon, FireIcon } from 'react-native-heroicons/outline';
-import { HeartIcon, Square3Stack3DIcon, UsersIcon } from 'react-native-heroicons/solid';
+import { ChevronLeftIcon } from 'react-native-heroicons/outline';
+import { HeartIcon } from 'react-native-heroicons/solid';
 import Animated, { FadeIn, FadeInDown } from 'react-native-reanimated';
 import { heightPercentageToDP as hp, widthPercentageToDP as wp } from 'react-native-responsive-screen';
 import YouTubeIframe from 'react-native-youtube-iframe';
@@ -102,81 +102,12 @@ export default function RecipeDetailScreen(props) {
                 <View className='px-4 flex justify-between space-y-4 pt-8'>
                     {/* name and area */}
                     <Animated.View entering={FadeInDown.duration(700).springify().damping(12)} className='space-y-2'>
-                        <Text style={{ fontSize: hp(3) }} className='font-bold flex-1 text-neutral-700'>
+                        <Text style={{ fontSize: hp(3) }} className='font-bold flex-1 text-[#333]'>
                             {meal?.strMeal}
                         </Text>
                         <Text style={{ fontSize: hp(2) }} className='font-medium flex-1 text-neutral-500'>
                             {meal?.strArea}
                         </Text>
-                    </Animated.View>
-
-                    {/* misc */}
-                    <Animated.View
-                        entering={FadeInDown.delay(100).duration(700).springify().damping(12)}
-                        className='flex-row justify-around'
-                    >
-                        <View className='flex rounded-full bg-amber-300 p-2'>
-                            <View
-                                style={{ height: hp(6.5), width: hp(6.5) }}
-                                className='bg-white rounded-full flex items-center justify-center'
-                            >
-                                <ClockIcon size={hp(4)} strokeWidth={2.5} color='#525252' />
-                            </View>
-                            <View className='flex items-center py-2 space-y-1'>
-                                <Text style={{ fontSize: hp(2) }} className='font-bold text-neutral-700'>
-                                    35
-                                </Text>
-                                <Text style={{ fontSize: hp(1.3) }} className='font-bold text-neutral-700'>
-                                    Mins
-                                </Text>
-                            </View>
-                        </View>
-                        <View className='flex rounded-full bg-amber-300 p-2'>
-                            <View
-                                style={{ height: hp(6.5), width: hp(6.5) }}
-                                className='bg-white rounded-full flex items-center justify-center'
-                            >
-                                <UsersIcon size={hp(4)} strokeWidth={2.5} color='#525252' />
-                            </View>
-                            <View className='flex items-center py-2 space-y-1'>
-                                <Text style={{ fontSize: hp(2) }} className='font-bold text-neutral-700'>
-                                    03
-                                </Text>
-                                <Text style={{ fontSize: hp(1.3) }} className='font-bold text-neutral-700'>
-                                    Servings
-                                </Text>
-                            </View>
-                        </View>
-                        <View className='flex rounded-full bg-amber-300 p-2'>
-                            <View
-                                style={{ height: hp(6.5), width: hp(6.5) }}
-                                className='bg-white rounded-full flex items-center justify-center'
-                            >
-                                <FireIcon size={hp(4)} strokeWidth={2.5} color='#525252' />
-                            </View>
-                            <View className='flex items-center py-2 space-y-1'>
-                                <Text style={{ fontSize: hp(2) }} className='font-bold text-neutral-700'>
-                                    103
-                                </Text>
-                                <Text style={{ fontSize: hp(1.3) }} className='font-bold text-neutral-700'>
-                                    Cal
-                                </Text>
-                            </View>
-                        </View>
-                        <View className='flex rounded-full bg-amber-300 p-2'>
-                            <View
-                                style={{ height: hp(6.5), width: hp(6.5) }}
-                                className='bg-white rounded-full flex items-center justify-center'
-                            >
-                                <Square3Stack3DIcon size={hp(4)} strokeWidth={2.5} color='#525252' />
-                            </View>
-                            <View className='flex items-center py-2 space-y-1'>
-                                <Text style={{ fontSize: hp(2) }} className='font-bold text-neutral-700'></Text>
-                                <Text style={{ fontSize: hp(1.3) }} className='font-bold text-neutral-700'>
-                                    Easy
-                                </Text>
-                            </View>
-                        </View>
                     </Animated.View>
 
                     {/* ingredients */}
@@ -193,14 +124,14 @@ export default function RecipeDetailScreen(props) {
                                     <View key={i} className='flex-row space-x-4'>
                                         <View
                                             style={{ height: hp(1.5), width: hp(1.5) }}
-                                            className='bg-amber-300 rounded-full'
+                                            className='bg-[#FFBF24] rounded-full'
                                         />
                                         <View className='flex-row space-x-2'>
                                             <Text
                                                 style={{ fontSize: hp(1.7) }}
                                                 className='font-extrabold text-neutral-700'
                                             >
-                                                {meal['strMeasure' + i]}
+                                                {meal['strMeasure' + i] + '  -'}
                                             </Text>
                                             <Text
                                                 style={{ fontSize: hp(1.7) }}
@@ -214,6 +145,7 @@ export default function RecipeDetailScreen(props) {
                             })}
                         </View>
                     </Animated.View>
+
                     {/* instructions */}
                     <Animated.View
                         entering={FadeInDown.delay(300).duration(700).springify().damping(12)}

@@ -59,8 +59,12 @@ export default function HomeScreen() {
             >
                 {/* Avatar and Bell Icon */}
                 <View className='mx-4 flex-row justify-between items-center mb-2'>
-                    <Image source={require('../../assets/avatar.png')} style={{ height: hp(5), width: hp(5) }} />
-                    <BellIcon size={hp(4)} color='gray' />
+                    <Image
+                        source={require('../../assets/avatar.png')}
+                        style={{ height: hp(5), width: hp(5) }}
+                        className='rounded-full bg-[#F5F5F5]'
+                    />
+                    <BellIcon size={hp(4)} color='#333' />
                 </View>
 
                 {/* Greetings */}
@@ -68,17 +72,17 @@ export default function HomeScreen() {
                     <Text style={{ fontSize: hp(1.7) }}>Hello, Rodzee!</Text>
                     <View>
                         <Text style={{ fontSize: hp(3.8) }} className='font-semibold text-[#333]'>
-                            Make Your Own Food,
+                            Mix, Munch
                         </Text>
                     </View>
                     <Text className='font-semibold text-[#333]' style={{ fontSize: hp(3.8) }}>
-                        stay at
-                        <Text className='text-[#FEDC56]'> home</Text>
+                        and Make
+                        <Text className='text-[#FEDC56] '> Memories</Text>
                     </Text>
                 </View>
 
                 {/* Search Bar */}
-                <View className='mx-4 flex-row items-center rounded-full bg-black/5 p-[6px] '>
+                <View className='mx-4 flex-row items-center rounded-full bg-[#F5F5F5] p-[6px] '>
                     <TextInput
                         placeholder='Search any recipe'
                         placeholderTextColor={'#333'}

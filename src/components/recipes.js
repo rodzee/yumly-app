@@ -62,7 +62,9 @@ const RecipeCard = ({ item, index, navigation }) => {
                         borderRadius: 35,
                     }}
                 />
-                <Text>{item.strMeal.length > 20 ? item.strMeal.slice(0, 20) + '...' : item.strMeal}</Text>
+                <Text className='self-center'>
+                    {item.strMeal.length > 20 ? item.strMeal.slice(0, 20) + '...' : item.strMeal}
+                </Text>
             </Pressable>
         </Animated.View>
     );
